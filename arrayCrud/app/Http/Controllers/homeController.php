@@ -37,9 +37,22 @@ class homeController extends Controller
     	return view('home.stdlist')->with('students', $students);
     }
 
-	public function details(){
-    	
-    	//return view('home.stdlist');
+	public function details($id){
+        $details = [];
+        $students = $this->getStudentlist();
+        for($i='0' ; $i < count($students); $i++)
+        {
+            if($students[$i]['id']==$id)
+            {
+                array_push($details,$students[$i]);
+                break;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return view('home.details')->with('students', $details);
     }
 
     public function create(){
