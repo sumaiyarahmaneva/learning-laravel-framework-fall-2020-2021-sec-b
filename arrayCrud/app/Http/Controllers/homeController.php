@@ -62,15 +62,42 @@ class homeController extends Controller
     	//return view('home.stdlist');
     }
 
-    public function delete(){
-    	
-    	//return view('home.stdlist');
+    public function delete($id){
+        
+        $value = [];
+        $students = $this->getStudentlist();
+        for($i='0' ; $i < count($students); $i++)
+        {
+            if($students[$i]['id']==$id)
+            {
+                array_push($value,$students[$i]);
+                break;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return view('home.delete')->with('students', $value);
     }
 
-    public function destroy(){
-    	
-    	//return view('home.stdlist');
+    public function destroy($id){
+        $value=[];
+        $students = $this->getStudentlist();
+        for($i='0' ; $i < count($students); $i++)
+        {
+            if($students[$i]['id']==$id)
+            {
+                continue;
+            }
+            else
+            {
+                array_push($value,$students[$i]);
+            }
+        }
+        return view('home.stdlist')->with('students', $value);
     }
+
 
     private function getStudentlist(){
 
