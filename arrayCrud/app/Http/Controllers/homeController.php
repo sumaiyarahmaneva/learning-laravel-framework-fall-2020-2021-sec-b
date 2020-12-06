@@ -66,14 +66,42 @@ class homeController extends Controller
         return view('home.stdlist')->with('students', $students);
     }
 
-    public function edit(){
-    	
-    	//return view('home.stdlist');
+    public function edit($id){
+        $value = [];
+        $students = $this->getStudentlist();
+        for($i='0' ; $i < count($students); $i++)
+        {
+            if($students[$i]['id']==$id)
+            {
+                array_push($value,$students[$i]);
+                break;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return view('home.edit')->with('students', $value);
     }
 
-    public function update(){
-    	
-    	//return view('home.stdlist');
+    public function update(Request $req , $id){
+        $students = $this->getStudentlist();
+        for($i='0' ; $i < count($students); $i++)
+        {
+            if($students[$i]['id']==$id)
+            {
+                $students[$i]['id']=$req->id;
+                $students[$i]['name']=$req->name;
+                $students[$i]['cgpa']=$req->cgpa;
+                $students[$i]['email']=$req->email;
+                break;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return view('home.stdlist')->with('students', $students);
     }
 
     public function delete($id){
