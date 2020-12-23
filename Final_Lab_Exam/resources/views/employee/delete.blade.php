@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Delete Product</title>
+	<title>Delete Job</title>
 </head>
 <body>
-	<a href="{{route('employee.productlist')}}">Back</a> |
+	<a href="{{route('employee.joblist')}}">Back</a> |
 	<a href="/logout">logout</a>
 	<br>
 	<br>
 	<form method="post">
 		<table border="1">
 			<tr>
-				<td>Product Name</td>
-				<td>{{$productname}}</td>
+				<td>Company Name</td>
+				<td>{{$companyname}}</td>
 			</tr>
 			<tr>
-				<td>Quantity</td>
-				<td>{{$quantity}}</td>
+				<td>Job Title</td>
+				<td>{{$jobtitle}}</td>
 			</tr>
 			<tr>
-				<td>Price</td>
-				<td>{{$price}}</td>
+				<td>Job Location</td>
+				<td>{{$joblocation}}</td>
+			</tr>
+			<tr>
+				<td>Salary</td>
+				<td>{{$salary}}</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<h1>Are you sure you want to delete this product?</h1><br>
+					<h1>Are you sure To Delete This Job?</h1><br>
 					<input type="submit" name="submit" value="Yes">
 					<button>
-						<a href="{{route('employee.productlist')}}">No</a>
+						<a href="{{route('employee.joblist')}}">No</a>
 					</button>
 					<input type="hidden" name="_token" value="{{csrf_token()}}">
 				</td>

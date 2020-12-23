@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create Product</title>
+	<title>Create Job</title>
 </head>
 <body>
 	<form method="post">
