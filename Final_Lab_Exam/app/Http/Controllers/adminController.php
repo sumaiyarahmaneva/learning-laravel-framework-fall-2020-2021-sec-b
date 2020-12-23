@@ -111,4 +111,30 @@ class adminController extends Controller
         } 
         
     }
+
+     public function delete($id){
+        if(session('type')=='Admin')
+        {
+           $employee = Employee::find($id);
+           return view('admin.delete', $employee);
+        }
+        else
+        {
+            return redirect('/login');
+        } 
+    }
+
+    public function destroy($id){
+        if(session('type')=='Admin')
+        {
+            $employee = Employee::find($id);
+            if($employee->delete()){
+                return redirect()->route('admin.employeelist');
+            }
+        }
+        else
+        {
+            return redirect('/login');
+        } 
+    }
 }
