@@ -28,7 +28,7 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<h1>Are you sure To Delete This Job?</h1><br>
+					<h1>Are you sure to delete this job?</h1><br>
 					<input type="submit" name="submit" value="Yes">
 					<button>
 						<a href="{{route('employee.joblist')}}">No</a>
