@@ -18,7 +18,7 @@ use App\Http\Controllers\employeeController;
 */
 
 Route::get('/', function () {
-    echo('Welcome to Onlineshop');
+    echo('Welcome to Job Portal');
 });
 
 Route::get('/login', [loginController::class,'index']);
@@ -38,12 +38,11 @@ Route::group(['middleware'=>['session']], function(){
 	Route::get('/employeedetails/{id}', [adminController::class,'show'])->name('admin.employeedetails');
 
 	Route::get('/employeehome', [employeeController::class,'employeehome'])->name('employee.home');
-	Route::get('/joblist', [employeeController::class,'joblist'])->name('employee.joblist');
+	Route::get('/joblist', [employeeController::class,'employeelist'])->name('employee.joblist');
 	Route::get('/createjob', [employeeController::class,'create'])->name('employee.createjob');
 	Route::post('/createjob', [employeeController::class,'store']);
 	Route::get('/editjob/{id}', [employeeController::class,'edit'])->name('employee.editjob');
 	Route::post('/editjob/{id}', [employeeController::class,'update']);
 	Route::get('/deletejob/{id}', [employeeController::class,'delete'])->name('employee.deletejob');
 	Route::post('/deletejob/{id}', [employeeController::class,'destroy']);
-	Route::get('/jobdetails/{id}', [employeeController::class,'show'])->name('employee.jobdetails');
 });
