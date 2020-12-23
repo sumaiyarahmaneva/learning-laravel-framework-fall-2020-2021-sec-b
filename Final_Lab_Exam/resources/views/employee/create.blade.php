@@ -7,19 +7,23 @@
 	<form method="post">
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 		<fieldset>
-			<legend>Create Product</legend>
+			<legend>Create Job</legend>
 		<table>
 			<tr>
-				<td>Product Name</td>
-				<td><input type="text" name="productname" value="{{old('productname')}}"></td>
+				<td>Company Name</td>
+				<td><input type="text" name="companyname" value="{{old('companyname')}}"></td>
 			</tr>
 			<tr>
-				<td>Quantity</td>
-				<td><input type="text" name="quantity" value="{{old('quantity')}}"></td>
+				<td>Job Title</td>
+				<td><input type="text" name="jobtitle" value="{{old('jobtitle')}}"></td>
 			</tr>
 			<tr>
-				<td>Price</td>
-				<td><input type="text" name="price" value="{{old('price')}}"></td>
+				<td>Job Location</td>
+				<td><input type="text" name="joblocation" value="{{old('joblocation')}}"></td>
+			</tr>
+			<tr>
+				<td>Salary</td>
+				<td><input type="text" name="salary" value="{{old('salary')}}"></td>
 			</tr>
 			<tr>
 				<td></td>

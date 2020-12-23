@@ -6,8 +6,8 @@
 <body>
 	<h1>Employee Home</h1>
 	<a href="{{route('employee.home')}}"> Home</a> | 
-	<a href="{{route('employee.createjob')}}"> Add New Product | 
-	<a href="{{route('employee.joblist')}}"> View All Products | 
+	<a href="{{route('employee.createjob')}}"> Add New Job | 
+	<a href="{{route('employee.joblist')}}"> View All Job | 
 	<a href="/logout"> logout
 </body>
 </html>

@@ -9,16 +9,20 @@
 	<br>
 	<table border="1">
 		<tr>
-			<td>Product Name</td>
-			<td>{{$productname}}</td>
+			<td>Company Name</td>
+			<td>{{$companyname}}</td>
 		</tr>
 		<tr>
-			<td>Quantity</td>
-			<td>{{$quantity}}</td>
+			<td>Job Title</td>
+			<td>{{$jobtitle}}</td>
 		</tr>
 		<tr>
-			<td>Price</td>
-			<td>{{$price}}</td>
+			<td>Job Location</td>
+			<td>{{$joblocation}}</td>
+		</tr>
+		<tr>
+			<td>Salary</td>
+			<td>{{$salary}}</td>
 		</tr>
 	</table>
 </body>
