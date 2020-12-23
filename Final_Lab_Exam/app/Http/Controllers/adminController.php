@@ -29,4 +29,37 @@ class adminController extends Controller
             return redirect('/login');
         }
     } 
+
+     public function create(){
+        if(session('type')=='Admin')
+        {
+           return view('admin.create');    
+        }
+        else
+        {
+            return redirect('/login');
+        }
+    }
+
+    public function store(employeeRequest $req){
+        if(session('type')=='Admin')
+        {
+            $employee = new Employee();
+
+            $employee->employeename     = $req->employeename;
+            $employee->companyname     = $req->companyname;
+            $employee->contactno         = $req->contactno;
+            $employee->username         = $req->username;
+            $employee->password         = $req->password;
+            $employee->type         = $req->type;
+
+            if($employee->save()){
+                return redirect()->route('admin.employeelist');
+            }    
+        }
+        else
+        {
+            return redirect('/login');
+        }
+    }
 }

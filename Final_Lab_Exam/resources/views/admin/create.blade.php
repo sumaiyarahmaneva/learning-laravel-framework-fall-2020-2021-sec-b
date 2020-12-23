@@ -14,6 +14,10 @@
 				<td><input type="text" name="employeename" value="{{old('employeename')}}"></td>
 			</tr>
 			<tr>
+				<td>Company Name</td>
+				<td><input type="text" name="companyname" value="{{old('companyname')}}"></td>
+			</tr>
+			<tr>
 				<td>Contact No</td>
 				<td><input type="text" name="contactno" value="{{old('contactno')}}"></td>
 			</tr>
