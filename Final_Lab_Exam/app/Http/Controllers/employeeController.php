@@ -60,5 +60,37 @@ class employeeController extends Controller
         }
     }
 
+    public function edit($id){
+        if(session('type')=='Employee')
+        {
+           $job = Job::find($id);
+           return view('employee.edit', $job);
+        }
+        else
+        {
+            return redirect('/login');
+        } 
+    }
+
+    public function update($id, Request $req){
+        if(session('type')=='Employee')
+        {
+            $job = Job::find($id);
+
+            $job->companyname     = $req->companyname;
+            $job->jobtitle         = $req->jobtitle;
+            $job->joblocation         = $req->joblocation;
+            $job->salary         = $req->salary;
+
+            if($job->save()){
+                return redirect()->route('employee.joblist');
+            }
+        }
+        else
+        {
+            return redirect('/login');
+        }
+    }
+
    
 }
