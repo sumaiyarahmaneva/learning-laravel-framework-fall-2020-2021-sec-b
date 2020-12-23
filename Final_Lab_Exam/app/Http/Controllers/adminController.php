@@ -16,5 +16,17 @@ class adminController extends Controller
         {
             return redirect('/login');
         }
-    }  
+    } 
+
+     public function employeelist(){
+        if(session('type')=='Admin')
+        {
+            $employee = Employee::all();
+            return view('admin.employeelist')->with('employees', $employee);     
+        }
+        else
+        {
+            return redirect('/login');
+        }
+    } 
 }

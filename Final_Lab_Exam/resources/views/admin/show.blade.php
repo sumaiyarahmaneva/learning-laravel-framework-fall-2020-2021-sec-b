@@ -13,6 +13,10 @@
 			<td>{{$employeename}}</td>
 		</tr>
 		<tr>
+			<td>Company Name</td>
+			<td>{{$employeename}}</td>
+		</tr>
+		<tr>
 			<td>Contact Number</td>
 			<td>{{$contactno}}</td>
 		</tr>
